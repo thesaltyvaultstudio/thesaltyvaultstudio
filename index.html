@@ -39,7 +39,7 @@
       padding: 60px 20px;
     }
 
-  .gallery {
+.gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 24px;
@@ -86,6 +86,17 @@
 
 .featured-piece .piece-info {
   padding: 24px;
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .piece img {
+    height: auto;
+    max-height: 620px;
+  }
 }
 
 @media (max-width: 800px) {
