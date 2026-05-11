@@ -79,6 +79,12 @@ h1 {
     object-fit: contain;
     display: block;
     background: #111;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.image-strip img:hover {
+    transform: scale(1.02);
 }
 
 .piece-info {
@@ -106,6 +112,37 @@ h1 {
     color: #d6a35d;
     font-size: 1.2rem;
     font-weight: bold;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+    max-width: 92%;
+    max-height: 88vh;
+    border-radius: 12px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 34px;
+    color: #fff;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 footer {
@@ -182,7 +219,6 @@ footer {
     </div>
 </div>
 
-
 <div class="piece">
     <div class="image-strip">
         <img src="images/franklin-the-octopus.jpg">
@@ -208,7 +244,6 @@ footer {
     </div>
 </div>
 
-
 <div class="piece">
     <div class="image-strip">
         <img src="images/chasing-tides4.jpg">
@@ -233,11 +268,13 @@ footer {
         </div>
     </div>
 </div>
-    <div class="piece">
+
+<div class="piece">
     <div class="image-strip">
-    <img src="images/dancing-spots.jpg">
-    <img src="images/Diving Spots.jpg">
-</div>
+        <img src="images/dancing-spots.jpg">
+        <img src="images/Diving Spots.jpg">
+    </div>
+
     <div class="piece-info">
         <h2>Dancing Spots</h2>
 
@@ -261,9 +298,48 @@ footer {
 
 </section>
 
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
 <footer>
     The Salty Vault Studio
 </footer>
+
+<script>
+const galleryImages = document.querySelectorAll('.image-strip img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeButton = document.querySelector('.lightbox-close');
+
+galleryImages.forEach(function(image) {
+    image.addEventListener('click', function() {
+        lightbox.style.display = 'block';
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt || '';
+    });
+});
+
+closeButton.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+});
+
+lightbox.addEventListener('click', function(event) {
+    if (event.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+</script>
 
 </body>
 </html>
