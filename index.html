@@ -14,10 +14,35 @@
       line-height: 1.6;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding: 18px 20px;
+      background: #111;
+      border-bottom: 1px solid #3a2f2a;
+    }
+
+    nav a {
+      color: #f5f1e8;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #d6a35d;
+    }
+
     header {
-      padding: 80px 20px;
       text-align: center;
       background: linear-gradient(to bottom, #111, #2f2a24);
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 20px;
     }
 
     h1 {
@@ -26,8 +51,9 @@
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
     }
 
     p {
@@ -35,106 +61,107 @@
       margin: auto;
     }
 
-    section {
-      padding: 60px 20px;
+    .tagline {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 20px auto 32px;
     }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: 40px auto;
-}
-
-.piece {
-  background: #2b2b2b;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #444;
-}
-
-.piece img {
-  width: 100%;
-  height: 520px;
-  object-fit: contain;
-  display: block;
-  background: #111;
-}
-
-.piece-info {
-  padding: 24px;
-}
-
-.featured-piece {
-  max-width: 1100px;
-  margin: 40px auto;
-  background: #2b2b2b;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid #444;
-}
-
-.featured-piece img {
-  width: 100%;
-  height: auto;
-  max-height: 720px;
-  object-fit: contain;
-  display: block;
-  background: #111;
-}
-
-.featured-piece .piece-info {
-  padding: 24px;
-}
-
-@media (max-width: 800px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .piece img {
-    height: auto;
-    max-height: 620px;
-  }
-}
-
-@media (max-width: 800px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .piece img {
-    height: auto;
-    max-height: 620px;
-  }
-}
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #444;
-      color: #aaa;
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: #c28b4e;
-      color: black;
+      padding: 14px 28px;
+      background: #c98f4a;
+      color: #111;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
+    }
+
+    .button:hover {
+      background: #d6a35d;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .featured-piece {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #2b2b2b;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #444;
+    }
+
+    .featured-piece img {
+      width: 100%;
+      height: 520px;
+      object-fit: contain;
+      display: block;
+      background: #111;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .piece {
+      background: #2b2b2b;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #444;
+    }
+
+    .piece img {
+      width: 100%;
+      height: 460px;
+      object-fit: contain;
+      display: block;
+      background: #111;
+    }
+
+    .piece-info {
+      padding: 24px;
+    }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      background: #111;
+    }
+
+    @media (max-width: 800px) {
+      h1 {
+        font-size: 2.6rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-piece img,
+      .piece img {
+        height: 420px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<body>
-
 <header>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#sculpture">Current Sculpture</a>
@@ -146,142 +173,82 @@
 
   <section id="home" class="hero">
     <h1>The Salty Vault Studio</h1>
-
-    <p class="tagline">
-      Florida-rooted sculpture, paintings, and water-shaped work by Cassandra Plock.
-    </p>
+    <p class="tagline">Florida-rooted sculpture, paintings, and water-shaped work by Cassandra Plock.</p>
 
     <div class="hero-buttons">
       <a href="#sculpture" class="button">View Current Sculpture</a>
-
-      <a href="#paintings" class="button secondary">
-        Available Paintings
-      </a>
+      <a href="#paintings" class="button">Available Paintings</a>
     </div>
   </section>
-
 </header>
 
-
 <section id="sculpture">
-
-  <h2 style="text-align:center;">Current Sculpture</h2>
+  <h2>Current Sculpture</h2>
 
   <div class="featured-piece">
-
     <img src="images/IMG_9921.JPG" />
-
     <div class="piece-info">
       <h3>Sister Octopus</h3>
-
-      <p>
-        Hand-carved cedar sculpture inspired by flowing water,
-        movement, and Florida marine life.
-      </p>
+      <p>Hand-carved cedar octopus sculpture.</p>
     </div>
-
   </div>
 
-</section>
-
-
-<section id="paintings">
-
-  <h2 style="text-align:center;">Available Paintings</h2>
-
   <div class="gallery">
-
     <div class="piece">
       <img src="images/cascading petals.JPG" />
-
       <div class="piece-info">
-        <h3>Break Free</h3>
-
-        <p>
-          One of the earliest water-themed acrylic works exploring
-          transformation, movement, and emergence.
-        </p>
+        <h3>Cascading Petals</h3>
+        <p>Cedar carving with resin floral and water-inspired details.</p>
       </div>
     </div>
 
+    <div class="piece">
+      <img src="images/Diving Spots.jpg" />
+      <div class="piece-info">
+        <h3>Diving Spots</h3>
+        <p>Cedar carving with carved suction-cup and flowing water forms.</p>
+      </div>
+    </div>
   </div>
-
 </section>
 
+<section id="paintings">
+  <h2>Available Paintings</h2>
+
+  <div class="gallery">
+    <div class="piece">
+      <img src="images/break-free.jpg" />
+      <div class="piece-info">
+        <h3>Break Free</h3>
+        <p>Early water-themed acrylic painting exploring transformation, movement, and emergence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="archive">
+  <h2>Archive</h2>
+  <p style="text-align:center;">
+    Selected sold and earlier works will be added here as the studio archive is rebuilt.
+  </p>
+</section>
 
 <section id="about">
-
-  <h2 style="text-align:center;">About</h2>
-
-  <p style="text-align:center; padding: 0 20px 60px;">
-    The Salty Vault Studio explores water, wildlife, movement,
-    and old Florida through sculpture and painting.
+  <h2>About</h2>
+  <p style="text-align:center;">
+    The Salty Vault Studio is a growing collection of handcrafted artwork rooted in Florida ecology, waterways, wildlife, and environmental observation. The work blends carving, painting, and natural textures into pieces shaped by regional identity.
   </p>
-
 </section>
-
 
 <section id="contact">
-
-  <h2 style="text-align:center;">Contact</h2>
-
-  <p style="text-align:center; padding-bottom: 80px;">
-    Purchase inquiries and commissions:
-    your-email-here@example.com
+  <h2>Contact</h2>
+  <p style="text-align:center;">
+    Purchase inquiries and commissions: your-email-here@example.com
   </p>
-
-</section>
-
-
-</body>
-
-<section>
-  <h2 style="text-align:center;">About</h2>
-
-  <p>
-    The Salty Vault Studio is a growing collection of handcrafted artwork
-    rooted in Florida ecology, waterways, wildlife, and environmental observation.
-    The work blends carving, painting, and natural textures into pieces shaped by
-    regional identity.
-  </p>
-</section>
-
-<section id="gallery">
-  <h2 style="text-align:center;">Featured Work</h2>
-
-  <div class="featured-piece">
-  <img src="images/IMG_9921.JPG" />
-  <div class="piece-info">
-    <h3>Sister Octopus</h3>
-    <p>Hand-carved cedar octopus sculpture</p>
-  </div>
-</div>
-
-    <div class="gallery">
-
-  <div class="piece">
-    <img src="images/cascading petals.JPG" />
-    <div class="piece-info">
-      <h3>Cascading Petals</h3>
-      <p>Wood carving with resin floral details</p>
-    </div>
-  </div>
-
-  <div class="piece">
-    <img src="images/Diving Spots.jpg" />
-    <div class="piece-info">
-      <h3>Diving Spots</h3>
-      <p>Wood carving with octopus-inspired detail work</p>
-    </div>
-  </div>
-
-</div>
 </section>
 
 <footer>
-  <p>
-    Contact: your-email-here@email.com
-  </p>
+  <p>The Salty Vault Studio</p>
 </footer>
 
 </body>
