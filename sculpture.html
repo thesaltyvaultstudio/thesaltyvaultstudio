@@ -7,7 +7,6 @@
 <title>Current Sculpture | The Salty Vault Studio</title>
 
 <style>
-
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -66,16 +65,9 @@ h1 {
     border: 1px solid #333;
 }
 
-.piece img {
-    width: 100%;
-    height: 420px;
-    object-fit: contain;
-    display: block;
-    background: #111;
-}
 .image-strip {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
     background: #111;
     padding: 6px;
@@ -83,10 +75,12 @@ h1 {
 
 .image-strip img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 360px;
+    object-fit: contain;
     display: block;
+    background: #111;
 }
+
 .piece-info {
     padding: 28px;
 }
@@ -123,7 +117,6 @@ footer {
 }
 
 @media (max-width: 900px) {
-
     h1 {
         font-size: 2.8rem;
     }
@@ -132,12 +125,14 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .piece img {
-        height: 420px;
+    .image-strip {
+        grid-template-columns: 1fr;
     }
 
+    .image-strip img {
+        height: 380px;
+    }
 }
-
 </style>
 </head>
 
@@ -151,7 +146,6 @@ footer {
 </nav>
 
 <header>
-
     <h1>Current Sculpture</h1>
 
     <p class="subtitle">
@@ -159,22 +153,17 @@ footer {
         wildlife, water, texture, and regional ecology through flowing
         organic forms.
     </p>
-
 </header>
 
 <section class="gallery">
 
-
 <div class="piece">
-
-   <div class="image-strip">
-    <img src="images/sister-octopus-catching-stars2.JPG">
-    <img src="images/sister-octopus-catching-stars4.JPG">
-    <img src="images/sister-octopus-catching-stars5.JPG">
-</div>
+    <div class="image-strip">
+        <img src="images/sister-octopus-catching-stars2.JPG">
+        <img src="images/sister-octopus-catching-stars3.JPG">
+    </div>
 
     <div class="piece-info">
-
         <h2>Sister Octopus Catching Stars</h2>
 
         <div class="medium">
@@ -190,23 +179,17 @@ footer {
         <div class="price">
             $3200.00
         </div>
-
     </div>
-
 </div>
-
 
 
 <div class="piece">
-
-   <div class="image-strip">
-    <img src="images/franklin-the-octopus.jpg">
-    <img src="images/franklin-the-octopus2.jpg">
-    <img src="images/franklin-the-octopus3.jpg">
-</div>
+    <div class="image-strip">
+        <img src="images/franklin-the-octopus.jpg">
+        <img src="images/franklin-the-octopus4.jpg">
+    </div>
 
     <div class="piece-info">
-
         <h2>Franklin the Octopus</h2>
 
         <div class="medium">
@@ -222,23 +205,17 @@ footer {
         <div class="price">
             $3200.00
         </div>
-
     </div>
-
 </div>
-
 
 
 <div class="piece">
-
     <div class="image-strip">
-    <img src="images/chasing-tides.JPG">
-    <img src="images/chasing-tides2.JPG">
-    <img src="images/chasing-tides3.JPG">
-</div>
+        <img src="images/chasing-tides4.jpg">
+        <img src="images/chasing-tides5.JPG">
+    </div>
 
     <div class="piece-info">
-
         <h2>Chasing Tides</h2>
 
         <div class="medium">
@@ -254,21 +231,23 @@ footer {
         <div class="price">
             $600.00
         </div>
-
     </div>
-
 </div>
-
 
 
 <div class="piece">
-
     <div class="image-strip">
-    <img src="images/dancing-spots.jpg">
-</div>
+        <img src="images/dancing-spots.jpg">
+        <img src="images/dancing-spots-diving.jpg">
+    </div>
+
+    <div class="piece">
+    <div class="image-strip">
+        <img src="images/dancing-spots.jpg">
+        <img src="images/Diving Spots.jpeg">
+    </div>
 
     <div class="piece-info">
-
         <h2>Dancing Spots</h2>
 
         <div class="medium">
@@ -278,8 +257,7 @@ footer {
         </div>
 
         <div class="dimensions">
-            Diving oriented — 14.5"W × 6"D × 14.5"H
-            <br><br>
+            Diving oriented — 14.5"W × 6"D × 14.5"H<br><br>
             Jumping oriented — 11"W × 4"D × 14.5"H
         </div>
 
@@ -287,11 +265,8 @@ footer {
             $1000.00 set<br>
             $600.00 each
         </div>
-
     </div>
-
 </div>
-
 
 </section>
 
