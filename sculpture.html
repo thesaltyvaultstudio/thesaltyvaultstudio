@@ -73,7 +73,20 @@ h1 {
     display: block;
     background: #111;
 }
+.image-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    background: #111;
+    padding: 6px;
+}
 
+.image-strip img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
 .piece-info {
     padding: 28px;
 }
@@ -154,7 +167,11 @@ footer {
 
 <div class="piece">
 
+   <div class="image-strip">
     <img src="images/sister-octopus-catching-stars2.JPG">
+    <img src="images/sister-octopus-catching-stars4.JPG">
+    <img src="images/sister-octopus-catching-stars5.JPG">
+</div>
 
     <div class="piece-info">
 
@@ -182,7 +199,11 @@ footer {
 
 <div class="piece">
 
+   <div class="image-strip">
     <img src="images/franklin-the-octopus.jpg">
+    <img src="images/franklin-the-octopus2.jpg">
+    <img src="images/franklin-the-octopus3.jpg">
+</div>
 
     <div class="piece-info">
 
@@ -210,7 +231,11 @@ footer {
 
 <div class="piece">
 
+    <div class="image-strip">
     <img src="images/chasing-tides.JPG">
+    <img src="images/chasing-tides2.JPG">
+    <img src="images/chasing-tides3.JPG">
+</div>
 
     <div class="piece-info">
 
@@ -238,7 +263,9 @@ footer {
 
 <div class="piece">
 
+    <div class="image-strip">
     <img src="images/dancing-spots.jpg">
+</div>
 
     <div class="piece-info">
 
