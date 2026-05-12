@@ -65,7 +65,16 @@ h1 {
     border: 1px solid #333;
 }
 
-.piece img {
+.image-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    background: #111;
+    padding: 6px;
+}
+
+.image-strip img,
+.piece > img {
     width: 100%;
     height: 420px;
     object-fit: cover;
@@ -75,7 +84,12 @@ h1 {
     transition: transform 0.25s ease;
 }
 
-.piece img:hover {
+.image-strip img {
+    height: 300px;
+}
+
+.image-strip img:hover,
+.piece > img:hover {
     transform: scale(1.02);
 }
 
@@ -149,7 +163,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .piece img {
+    .image-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .image-strip img,
+    .piece > img {
         height: 380px;
     }
 }
@@ -180,7 +199,10 @@ footer {
 <section class="gallery">
 
 <div class="piece">
-    <img src="images/archive/feather1.jpg" alt="Feather carving">
+    <div class="image-strip">
+        <img src="feather1.jpg" alt="Feather carving detail">
+        <img src="feather2.jpg" alt="Feather carving detail">
+    </div>
 
     <div class="piece-info">
         <div class="status">Archived Work</div>
@@ -194,7 +216,11 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/goose-refinish.jpg" alt="Goose refinishing">
+    <div class="image-strip">
+        <img src="goose refinish.JPG" alt="Goose refinishing detail">
+        <img src="goose refinish2.JPG" alt="Goose refinishing detail">
+        <img src="goose refinish3.JPG" alt="Goose refinishing detail">
+    </div>
 
     <div class="piece-info">
         <div class="status">Refinished Work</div>
@@ -208,7 +234,7 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/hope-and-joy.jpg" alt="Hope and Joy carving">
+    <img src="hope and joy4.JPG" alt="Hope and Joy carving">
 
     <div class="piece-info">
         <div class="status">Private Collection</div>
@@ -222,7 +248,7 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/manatee.jpg" alt="Manatee carving">
+    <img src="images/manatee.jpg" alt="Manatee carving">
 
     <div class="piece-info">
         <div class="status">Archived Work</div>
@@ -236,7 +262,7 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/swirling-seas.jpg" alt="Swirling Seas carving">
+    <img src="images/swirling seas.JPG" alt="Swirling Seas carving">
 
     <div class="piece-info">
         <div class="status">Archived Work</div>
@@ -250,11 +276,11 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/rucker-airborne.jpg" alt="Rucker Airborne">
+    <img src="images/rucker 82nd airborne4.jpg" alt="Rucker 82nd Airborne carving">
 
     <div class="piece-info">
         <div class="status">Commissioned Work</div>
-        <h2>Rucker Airborne</h2>
+        <h2>Rucker 82nd Airborne</h2>
 
         <div class="description">
             Military and commemorative carving work incorporating
@@ -264,7 +290,7 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/archive/sister-octopus-cane.jpg" alt="Sister Octopus Cane">
+    <img src="images/sister octopus cane.jpg" alt="Sister Octopus Cane">
 
     <div class="piece-info">
         <div class="status">Conceptual Work</div>
@@ -273,6 +299,20 @@ footer {
         <div class="description">
             Functional sculptural exploration merging marine themes,
             utility, and flowing carved organic forms.
+        </div>
+    </div>
+</div>
+
+<div class="piece">
+    <img src="images/savannah.jpg" alt="Savannah carving">
+
+    <div class="piece-info">
+        <div class="status">Archived Work</div>
+        <h2>Savannah</h2>
+
+        <div class="description">
+            Character-driven carved work from the studio archive,
+            included as part of the broader historical body of work.
         </div>
     </div>
 </div>
@@ -298,6 +338,7 @@ galleryImages.forEach(function(image) {
     image.addEventListener('click', function() {
         lightbox.style.display = 'block';
         lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt || '';
     });
 });
 
@@ -308,6 +349,13 @@ closeButton.addEventListener('click', function() {
 
 lightbox.addEventListener('click', function(event) {
     if (event.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
         lightbox.style.display = 'none';
         lightboxImg.src = '';
     }
