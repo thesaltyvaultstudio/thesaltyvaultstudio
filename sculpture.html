@@ -28,8 +28,12 @@ h1 { font-size: 4rem; margin-bottom: 10px; }
 .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0, 0, 0, 0.92); }
 .lightbox img { display: block; margin: auto; max-width: 92%; max-height: 88vh; border-radius: 12px; }
 .lightbox-close { position: absolute; top: 18px; right: 34px; color: #fff; font-size: 42px; font-weight: bold; cursor: pointer; }
+.lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); border: 1px solid #555; background: rgba(17,17,17,0.75); color: #f5f1e8; font-size: 42px; width: 56px; height: 72px; cursor: pointer; border-radius: 10px; }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-prev:hover, .lightbox-next:hover { color: #d6a35d; border-color: #d6a35d; }
 footer { margin-top: 80px; padding: 40px; text-align: center; background: #111; color: #777; }
-@media (max-width: 900px) { h1 { font-size: 2.8rem; } .gallery { grid-template-columns: 1fr; } .primary-image { height: 340px; } .thumbnail-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { h1 { font-size: 2.8rem; } .gallery { grid-template-columns: 1fr; } .primary-image { height: 340px; } .thumbnail-strip { grid-template-columns: repeat(3, 1fr); } .lightbox-prev, .lightbox-next { width: 44px; height: 58px; font-size: 32px; } .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; } }
 </style>
 </head>
 <body>
@@ -102,17 +106,27 @@ footer { margin-top: 80px; padding: 40px; text-align: center; background: #111; 
 </div>
 
 </section>
-<div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""></div>
+<div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><button class="lightbox-prev" aria-label="Previous image">&#8249;</button><img id="lightbox-img" src="" alt=""><button class="lightbox-next" aria-label="Next image">&#8250;</button></div>
 <footer>The Salty Vault Studio</footer>
 <script>
-const galleryImages = document.querySelectorAll('.piece img');
+const galleryImages = Array.from(document.querySelectorAll('.piece img'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeButton = document.querySelector('.lightbox-close');
-galleryImages.forEach(function(image) { image.addEventListener('click', function() { lightbox.style.display = 'block'; lightboxImg.src = image.src; lightboxImg.alt = image.alt || ''; }); });
+const prevButton = document.querySelector('.lightbox-prev');
+const nextButton = document.querySelector('.lightbox-next');
+let currentIndex = 0;
+function showImage(index) {
+    currentIndex = (index + galleryImages.length) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentIndex].src;
+    lightboxImg.alt = galleryImages[currentIndex].alt || '';
+}
+galleryImages.forEach(function(image, index) { image.addEventListener('click', function() { lightbox.style.display = 'block'; showImage(index); }); });
+prevButton.addEventListener('click', function(event) { event.stopPropagation(); showImage(currentIndex - 1); });
+nextButton.addEventListener('click', function(event) { event.stopPropagation(); showImage(currentIndex + 1); });
 closeButton.addEventListener('click', function() { lightbox.style.display = 'none'; lightboxImg.src = ''; });
 lightbox.addEventListener('click', function(event) { if (event.target === lightbox) { lightbox.style.display = 'none'; lightboxImg.src = ''; } });
-document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { lightbox.style.display = 'none'; lightboxImg.src = ''; } });
+document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { lightbox.style.display = 'none'; lightboxImg.src = ''; } if (lightbox.style.display === 'block' && event.key === 'ArrowLeft') { showImage(currentIndex - 1); } if (lightbox.style.display === 'block' && event.key === 'ArrowRight') { showImage(currentIndex + 1); } });
 </script>
 </body>
 </html>
