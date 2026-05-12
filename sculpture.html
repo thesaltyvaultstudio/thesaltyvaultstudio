@@ -7,339 +7,112 @@
 <title>Current Sculpture | The Salty Vault Studio</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background: #161616;
-    color: #f5f1e8;
-}
-
-nav {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-}
-
-nav a {
-    color: #d8c7ae;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 0.95rem;
-}
-
-nav a:hover {
-    color: #d6a35d;
-}
-
-header {
-    padding: 80px 20px 50px;
-    text-align: center;
-    background: linear-gradient(to bottom, #111, #2f2a24);
-}
-
-h1 {
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    max-width: 700px;
-    margin: auto;
-    color: #d8c7ae;
-    line-height: 1.7;
-}
-
-.gallery {
-    max-width: 1400px;
-    margin: 60px auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 40px;
-}
-
-.piece {
-    background: #222;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid #333;
-}
-
-.image-strip {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    background: #111;
-    padding: 6px;
-}
-
-.image-strip img {
-    width: 100%;
-    height: 360px;
-    object-fit: contain;
-    display: block;
-    background: #111;
-    cursor: pointer;
-    transition: transform 0.25s ease;
-}
-
-.image-strip img:hover {
-    transform: scale(1.02);
-}
-
-.piece-info {
-    padding: 28px;
-}
-
-.piece-info h2 {
-    margin-top: 0;
-    font-size: 2rem;
-}
-
-.medium {
-    color: #d8c7ae;
-    margin-top: 18px;
-    line-height: 1.8;
-}
-
-.dimensions {
-    margin-top: 20px;
-    color: #c8b79b;
-}
-
-.price {
-    margin-top: 20px;
-    color: #d6a35d;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 40px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: auto;
-    background: rgba(0, 0, 0, 0.92);
-}
-
-.lightbox img {
-    display: block;
-    margin: auto;
-    max-width: 92%;
-    max-height: 88vh;
-    border-radius: 12px;
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 18px;
-    right: 34px;
-    color: #fff;
-    font-size: 42px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    margin-top: 80px;
-    padding: 40px;
-    text-align: center;
-    background: #111;
-    color: #777;
-}
-
-@media (max-width: 900px) {
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .image-strip {
-        grid-template-columns: 1fr;
-    }
-
-    .image-strip img {
-        height: 380px;
-    }
-}
+body { margin: 0; font-family: Georgia, serif; background: #161616; color: #f5f1e8; }
+nav { background: #111; padding: 20px; text-align: center; }
+nav a { color: #d8c7ae; text-decoration: none; margin: 0 15px; font-size: 0.95rem; }
+nav a:hover { color: #d6a35d; }
+header { padding: 80px 20px 50px; text-align: center; background: linear-gradient(to bottom, #111, #2f2a24); }
+h1 { font-size: 4rem; margin-bottom: 10px; }
+.subtitle { max-width: 700px; margin: auto; color: #d8c7ae; line-height: 1.7; }
+.gallery { max-width: 1400px; margin: 60px auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 40px; align-items: start; }
+.piece { background: #222; border-radius: 16px; overflow: hidden; border: 1px solid #333; }
+.primary-image { width: 100%; height: 420px; object-fit: contain; display: block; background: #111; cursor: pointer; transition: transform 0.25s ease; }
+.thumbnail-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; padding: 6px; background: #111; }
+.thumbnail-strip img { width: 100%; height: 82px; object-fit: cover; display: block; background: #111; cursor: pointer; opacity: 0.85; transition: opacity 0.25s ease, transform 0.25s ease; }
+.primary-image:hover, .thumbnail-strip img:hover { transform: scale(1.02); opacity: 1; }
+.piece-info { padding: 28px; }
+.piece-info h2 { margin-top: 0; font-size: 2rem; }
+.medium { color: #d8c7ae; margin-top: 18px; line-height: 1.8; }
+.dimensions { margin-top: 20px; color: #c8b79b; }
+.price { margin-top: 20px; color: #d6a35d; font-size: 1.2rem; font-weight: bold; }
+.lightbox { display: none; position: fixed; z-index: 9999; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0, 0, 0, 0.92); }
+.lightbox img { display: block; margin: auto; max-width: 92%; max-height: 88vh; border-radius: 12px; }
+.lightbox-close { position: absolute; top: 18px; right: 34px; color: #fff; font-size: 42px; font-weight: bold; cursor: pointer; }
+footer { margin-top: 80px; padding: 40px; text-align: center; background: #111; color: #777; }
+@media (max-width: 900px) { h1 { font-size: 2.8rem; } .gallery { grid-template-columns: 1fr; } .primary-image { height: 340px; } .thumbnail-strip { grid-template-columns: repeat(3, 1fr); } }
 </style>
 </head>
-
 <body>
-
 <nav>
     <a href="index.html">Home</a>
     <a href="sculpture.html">Current Sculpture</a>
     <a href="paintings.html">Available Paintings</a>
     <a href="archive.html">Archive</a>
 </nav>
-
 <header>
     <h1>Current Sculpture</h1>
-
-    <p class="subtitle">
-        Hand-carved Florida-rooted sculpture exploring marine movement,
-        wildlife, water, texture, and regional ecology through flowing
-        organic forms.
-    </p>
+    <p class="subtitle">Hand-carved Florida-rooted sculpture exploring marine movement, wildlife, water, texture, and regional ecology through flowing organic forms.</p>
 </header>
-
 <section class="gallery">
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="images/sister-octopus-catching-stars2.JPG">
-        <img src="images/sister-octopus-catching-stars3.JPG">
+    <img class="primary-image" src="images/sister-octopus-catching-stars2.JPG" alt="Sister Octopus Catching Stars primary image">
+    <div class="thumbnail-strip">
+        <img src="images/sister-octopus-catching-stars3.JPG" alt="Sister Octopus Catching Stars detail image">
+        <img src="images/sister-octopus-catching-stars4.JPG" alt="Sister Octopus Catching Stars detail image">
+        <img src="images/sister-octopus-catching-stars5.JPG" alt="Sister Octopus Catching Stars detail image">
     </div>
-
     <div class="piece-info">
         <h2>Sister Octopus Catching Stars</h2>
-
-        <div class="medium">
-            Locally harvested Eastern Red Cedar<br>
-            Traditional and power carved<br>
-            Spar urethane finish
-        </div>
-
-        <div class="dimensions">
-            44"W × 10"D × 16.5"H
-        </div>
-
-        <div class="price">
-            $3200.00
-        </div>
+        <div class="medium">Locally harvested Eastern Red Cedar<br>Traditional and power carved<br>Spar urethane finish</div>
+        <div class="dimensions">44"W × 10"D × 16.5"H</div>
+        <div class="price">$3200.00</div>
     </div>
 </div>
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="images/franklin-the-octopus.jpg">
-        <img src="images/franklin-the-octopus4.jpg">
+    <img class="primary-image" src="images/franklin-the-octopus.jpg" alt="Franklin the Octopus primary image">
+    <div class="thumbnail-strip">
+        <img src="images/franklin-the-octopus2.jpg" alt="Franklin the Octopus detail image">
+        <img src="images/franklin-the-octopus3.jpg" alt="Franklin the Octopus detail image">
+        <img src="images/franklin-the-octopus4.jpg" alt="Franklin the Octopus detail image">
     </div>
-
     <div class="piece-info">
         <h2>Franklin the Octopus</h2>
-
-        <div class="medium">
-            Locally harvested Eastern Red Cedar<br>
-            Traditional and power carved<br>
-            Spar urethane finish
-        </div>
-
-        <div class="dimensions">
-            21.5"H × 40"D × 28"W
-        </div>
-
-        <div class="price">
-            $3200.00
-        </div>
+        <div class="medium">Locally harvested Eastern Red Cedar<br>Traditional and power carved<br>Spar urethane finish</div>
+        <div class="dimensions">21.5"H × 40"D × 28"W</div>
+        <div class="price">$3200.00</div>
     </div>
 </div>
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="images/chasing-tides4.jpg">
-        <img src="images/chasing-tides5.JPG">
+    <img class="primary-image" src="images/chasing-tides4.jpg" alt="Chasing Tides primary image">
+    <div class="thumbnail-strip">
+        <img src="images/chasing-tides5.JPG" alt="Chasing Tides detail image">
     </div>
-
     <div class="piece-info">
         <h2>Chasing Tides</h2>
-
-        <div class="medium">
-            Locally harvested Eastern Red Cedar<br>
-            Traditional and power carved<br>
-            Spar urethane finish
-        </div>
-
-        <div class="dimensions">
-            12"H × 11"W × 11"D
-        </div>
-
-        <div class="price">
-            $600.00
-        </div>
+        <div class="medium">Locally harvested Eastern Red Cedar<br>Traditional and power carved<br>Spar urethane finish</div>
+        <div class="dimensions">12"H × 11"W × 11"D</div>
+        <div class="price">$600.00</div>
     </div>
 </div>
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="images/dancing-spots.jpg">
-        <img src="images/Diving Spots.jpg">
+    <img class="primary-image" src="images/dancing-spots.jpg" alt="Dancing Spots primary image">
+    <div class="thumbnail-strip">
+        <img src="images/Diving Spots.jpg" alt="Dancing Spots detail image">
     </div>
-
     <div class="piece-info">
         <h2>Dancing Spots</h2>
-
-        <div class="medium">
-            Locally harvested Eastern Red Cedar<br>
-            Traditional and power carved<br>
-            Spar urethane finish
-        </div>
-
-        <div class="dimensions">
-            Diving oriented — 14.5"W × 6"D × 14.5"H<br><br>
-            Jumping oriented — 11"W × 4"D × 14.5"H
-        </div>
-
-        <div class="price">
-            $1000.00 set<br>
-            $600.00 each
-        </div>
+        <div class="medium">Locally harvested Eastern Red Cedar<br>Traditional and power carved<br>Spar urethane finish</div>
+        <div class="dimensions">Diving oriented — 14.5"W × 6"D × 14.5"H<br><br>Jumping oriented — 11"W × 4"D × 14.5"H</div>
+        <div class="price">$1000.00 set<br>$600.00 each</div>
     </div>
 </div>
 
 </section>
-
-<div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="">
-</div>
-
-<footer>
-    The Salty Vault Studio
-</footer>
-
+<div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""></div>
+<footer>The Salty Vault Studio</footer>
 <script>
-const galleryImages = document.querySelectorAll('.image-strip img');
+const galleryImages = document.querySelectorAll('.piece img');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeButton = document.querySelector('.lightbox-close');
-
-galleryImages.forEach(function(image) {
-    image.addEventListener('click', function() {
-        lightbox.style.display = 'block';
-        lightboxImg.src = image.src;
-        lightboxImg.alt = image.alt || '';
-    });
-});
-
-closeButton.addEventListener('click', function() {
-    lightbox.style.display = 'none';
-    lightboxImg.src = '';
-});
-
-lightbox.addEventListener('click', function(event) {
-    if (event.target === lightbox) {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-    }
-});
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-    }
-});
+galleryImages.forEach(function(image) { image.addEventListener('click', function() { lightbox.style.display = 'block'; lightboxImg.src = image.src; lightboxImg.alt = image.alt || ''; }); });
+closeButton.addEventListener('click', function() { lightbox.style.display = 'none'; lightboxImg.src = ''; });
+lightbox.addEventListener('click', function(event) { if (event.target === lightbox) { lightbox.style.display = 'none'; lightboxImg.src = ''; } });
+document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { lightbox.style.display = 'none'; lightboxImg.src = ''; } });
 </script>
-
 </body>
 </html>
