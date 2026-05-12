@@ -54,8 +54,9 @@ h1 {
     margin: 60px auto;
     padding: 0 24px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 40px;
+    align-items: start;
 }
 
 .piece {
@@ -76,16 +77,12 @@ h1 {
 .image-strip img,
 .piece > img {
     width: 100%;
-    height: 420px;
-    object-fit: cover;
+    height: 320px;
+    object-fit: contain;
     display: block;
     background: #111;
     cursor: pointer;
     transition: transform 0.25s ease;
-}
-
-.image-strip img {
-    height: 300px;
 }
 
 .image-strip img:hover,
@@ -169,7 +166,7 @@ footer {
 
     .image-strip img,
     .piece > img {
-        height: 380px;
+        height: 320px;
     }
 }
 </style>
