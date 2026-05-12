@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Available Paintings | The Salty Vault Studio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #161616;
+    color: #f5f1e8;
+}
+
+nav {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: #d8c7ae;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: #d6a35d;
+}
+
+header {
+    padding: 80px 20px 50px;
+    text-align: center;
+    background: linear-gradient(to bottom, #111, #2f2a24);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    max-width: 760px;
+    margin: auto;
+    color: #d8c7ae;
+    line-height: 1.7;
+}
+
+.gallery {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.piece {
+    background: #222;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+
+.piece img {
+    width: 100%;
+    height: 560px;
+    object-fit: contain;
+    display: block;
+    background: #111;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.piece img:hover {
+    transform: scale(1.02);
+}
+
+.piece-info {
+    padding: 28px;
+}
+
+.piece-info h2 {
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.medium {
+    color: #d8c7ae;
+    margin-top: 18px;
+    line-height: 1.8;
+}
+
+.dimensions,
+.price {
+    margin-top: 20px;
+    color: #c8b79b;
+}
+
+.price {
+    color: #d6a35d;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.note {
+    max-width: 760px;
+    margin: 20px auto 80px;
+    padding: 0 24px;
+    text-align: center;
+    color: #d8c7ae;
+    line-height: 1.7;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.92);
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+    max-width: 92%;
+    max-height: 88vh;
+    border-radius: 12px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 34px;
+    color: #fff;
+    font-size: 42px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 80px;
+    padding: 40px;
+    text-align: center;
+    background: #111;
+    color: #777;
+}
+
+@media (max-width: 900px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .piece img {
+        height: 460px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="sculpture.html">Current Sculpture</a>
+    <a href="paintings.html">Available Paintings</a>
+    <a href="archive.html">Archive</a>
+</nav>
+
+<header>
+    <h1>Available Paintings</h1>
+    <p class="subtitle">
+        Paintings from The Salty Vault Studio archive, rooted in water, movement,
+        transformation, Florida wildlife, and the same conservation-adjacent thread
+        that runs through the sculptural work.
+    </p>
+</header>
+
+<section class="gallery">
+
+<div class="piece">
+    <img src="images/Break Free.jpg" alt="Break Free painting">
+
+    <div class="piece-info">
+        <h2>Break Free</h2>
+
+        <div class="medium">
+            Acrylic painting<br>
+            Water-themed early work<br>
+            Available painting archive entry
+        </div>
+
+        <div class="dimensions">
+            Dimensions to be added
+        </div>
+
+        <div class="price">
+            Price to be added
+        </div>
+    </div>
+</div>
+
+</section>
+
+<p class="note">
+    Additional available paintings will be added as the studio inventory is rebuilt and standardized.
+</p>
+
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<footer>
+    The Salty Vault Studio
+</footer>
+
+<script>
+const galleryImages = document.querySelectorAll('.piece img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeButton = document.querySelector('.lightbox-close');
+
+galleryImages.forEach(function(image) {
+    image.addEventListener('click', function() {
+        lightbox.style.display = 'block';
+        lightboxImg.src = image.src;
+        lightboxImg.alt = image.alt || '';
+    });
+});
+
+closeButton.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+});
+
+lightbox.addEventListener('click', function(event) {
+    if (event.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+</script>
+
+</body>
+</html>
