@@ -66,28 +66,14 @@ h1 {
     border: 1px solid #333;
 }
 
-.image-strip {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    background: #111;
-    padding: 6px;
-}
-
-.image-strip img,
-.piece > img,
 .primary-image {
     width: 100%;
-    height: 320px;
+    height: 420px;
     object-fit: contain;
     display: block;
     background: #111;
     cursor: pointer;
     transition: transform 0.25s ease;
-}
-
-.primary-image {
-    height: 420px;
 }
 
 .thumbnail-strip {
@@ -109,8 +95,6 @@ h1 {
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.image-strip img:hover,
-.piece > img:hover,
 .primary-image:hover,
 .thumbnail-strip img:hover {
     transform: scale(1.02);
@@ -187,18 +171,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .image-strip {
-        grid-template-columns: 1fr;
+    .primary-image {
+        height: 320px;
     }
 
     .thumbnail-strip {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .image-strip img,
-    .piece > img,
-    .primary-image {
-        height: 320px;
     }
 }
 </style>
@@ -228,9 +206,10 @@ footer {
 <section class="gallery">
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="feather1.jpg" alt="Feather carving detail">
-        <img src="feather2.jpg" alt="Feather carving detail">
+    <img class="primary-image" src="feather1.jpg" alt="Feather carving primary image">
+
+    <div class="thumbnail-strip">
+        <img src="feather2.jpg" alt="Feather carving detail image">
     </div>
 
     <div class="piece-info">
@@ -246,10 +225,11 @@ footer {
 </div>
 
 <div class="piece">
-    <div class="image-strip">
-        <img src="goose refinish.JPG" alt="Goose refinishing detail">
-        <img src="goose refinish2.JPG" alt="Goose refinishing detail">
-        <img src="goose refinish3.JPG" alt="Goose refinishing detail">
+    <img class="primary-image" src="goose refinish.JPG" alt="Goose Refinish primary image">
+
+    <div class="thumbnail-strip">
+        <img src="goose refinish2.JPG" alt="Goose Refinish detail image">
+        <img src="goose refinish3.JPG" alt="Goose Refinish detail image">
     </div>
 
     <div class="piece-info">
@@ -286,7 +266,31 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/manatee.jpg" alt="Manatee carving">
+    <img class="primary-image" src="images/large mouth bass.jpg" alt="Large Mouth Bass carving primary image">
+
+    <div class="thumbnail-strip">
+        <img src="images/large mouth bass 2.jpg" alt="Large Mouth Bass detail image">
+        <img src="images/large mouth bass 3.jpg" alt="Large Mouth Bass detail image">
+    </div>
+
+    <div class="piece-info">
+        <div class="status">Private Collection</div>
+        <h2>Large Mouth Bass</h2>
+
+        <div class="description">
+            Locally harvested Eastern Red Cedar.
+            Traditional hand carved and power carved.
+        </div>
+    </div>
+</div>
+
+<div class="piece">
+    <img class="primary-image" src="images/manatee.jpg" alt="Manatee carving primary image">
+
+    <div class="thumbnail-strip">
+        <img src="images/manatee2.jpg" alt="Manatee detail image">
+        <img src="images/manatee3.jpg" alt="Manatee detail image">
+    </div>
 
     <div class="piece-info">
         <div class="status">Private Collection</div>
@@ -300,7 +304,14 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/swirling seas.JPG" alt="Swirling Seas carving">
+    <img class="primary-image" src="images/swirling seas.JPG" alt="Swirling Seas carving primary image">
+
+    <div class="thumbnail-strip">
+        <img src="images/swirling seas2.JPG" alt="Swirling Seas detail image">
+        <img src="images/swirling seas3.JPG" alt="Swirling Seas detail image">
+        <img src="images/swirling seas4.JPG" alt="Swirling Seas detail image">
+        <img src="images/swirling seas5.JPG" alt="Swirling Seas detail image">
+    </div>
 
     <div class="piece-info">
         <div class="status">Private Collection</div>
@@ -315,7 +326,15 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/rucker 82nd airborne4.jpg" alt="Rucker 82nd Airborne carving">
+    <img class="primary-image" src="images/rucker 82nd airborne4.jpg" alt="Rucker 82nd Airborne carving primary image">
+
+    <div class="thumbnail-strip">
+        <img src="images/rucker 82nd airborne2.jpg" alt="Rucker 82nd Airborne detail image">
+        <img src="images/rucker 82nd airborne3.jpg" alt="Rucker 82nd Airborne detail image">
+        <img src="images/rucker 82nd airborne5.jpg" alt="Rucker 82nd Airborne detail image">
+        <img src="images/rucker 82nd airborne6.jpg" alt="Rucker 82nd Airborne detail image">
+        <img src="images/rucker 82nd airborne7.jpg" alt="Rucker 82nd Airborne detail image">
+    </div>
 
     <div class="piece-info">
         <div class="status">Private Collection</div>
@@ -330,7 +349,7 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/sister octopus cane.jpg" alt="Sister Octopus Cane">
+    <img class="primary-image" src="images/sister octopus cane.jpg" alt="Sister Octopus Cane">
 
     <div class="piece-info">
         <div class="status">Conceptual Work</div>
@@ -344,14 +363,14 @@ footer {
 </div>
 
 <div class="piece">
-    <img src="images/savannah.jpg" alt="Savannah carving">
+    <img class="primary-image" src="images/savannah.jpg" alt="Savannah carving">
 
     <div class="piece-info">
         <div class="status">Archived Work</div>
         <h2>Savannah</h2>
 
         <div class="description">
-            Pine cut with scroll saw and hand painted. 
+            Pine cut with scroll saw and hand painted.
         </div>
     </div>
 </div>
