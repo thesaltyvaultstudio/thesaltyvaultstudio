@@ -20,8 +20,6 @@ h1 { font-size: 4rem; margin-bottom: 10px; }
 .card-info { padding: 24px; }
 .card-info h2 { margin-top: 0; font-size: 1.55rem; }
 .card-info p { color: #d8c7ae; margin-bottom: 0; }
-.placeholder { border: 1px dashed #5b4b3d; border-radius: 16px; padding: 36px; color: #d8c7ae; background: #1f1f1f; }
-.placeholder h2 { color: #f5f1e8; margin-top: 0; }
 .lightbox { display: none; position: fixed; z-index: 9999; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0,0,0,0.92); }
 .lightbox img { display: block; margin: auto; max-width: 92%; max-height: 88vh; border-radius: 12px; }
 .lightbox-close { position: absolute; top: 18px; right: 34px; color: #fff; font-size: 42px; font-weight: bold; cursor: pointer; }
@@ -31,23 +29,28 @@ footer { margin-top: 80px; padding: 40px; text-align: center; background: #111; 
 </head>
 <body>
 <nav>
-    <a href="index.html">Home</a>
-    <a href="sculpture.html">Current Sculpture</a>
-    <a href="paintings.html">Available Paintings</a>
-    <a href="archive.html">Archive</a>
-    <a href="process.html">Process</a>
-    <a href="about.html">About</a>
+<a href="index.html">Home</a>
+<a href="sculpture.html">Current Sculpture</a>
+<a href="paintings.html">Available Paintings</a>
+<a href="archive.html">Archive</a>
+<a href="process.html">Process</a>
+<a href="about.html">About</a>
 </nav>
 <header>
-    <h1>Studio Process</h1>
-    <p class="subtitle">Workshop images, carving stages, tool marks, cedar dust, finishing work, and the real studio environment behind the finished pieces.</p>
+<h1>Studio Process</h1>
+<p class="subtitle">Workshop images, carving stages, rough sketches, resin experiments, and the physical studio environment behind the finished work.</p>
 </header>
-<p class="process-note">This page is built as the holding place for process imagery. Finished-object close-ups stay with their sculpture in the archive or inventory pages; workshop and in-progress material belongs here.</p>
+<p class="process-note">This section preserves the real development process behind the studio archive: rough carving stages, concept sketches, resin pours, surface testing, and evolving wildlife forms.</p>
 <section class="gallery">
-    <div class="placeholder">
-        <h2>Process Image Staging Area</h2>
-        <p>New workshop images can be added here as cards once their exact GitHub filenames are confirmed. This keeps process documentation separate from portfolio images and prevents cluttering the finished-work archive.</p>
-    </div>
+<div class="process-card"><img src="cascading flowers rough sketch.jpg" alt="Cascading Flowers rough sketch"><div class="card-info"><h2>Cascading Flowers — Rough Sketch</h2><p>Early design and compositional planning before carving and resin work.</p></div></div>
+<div class="process-card"><img src="cascading flowers resin.jpg" alt="Cascading Flowers resin stage"><div class="card-info"><h2>Cascading Flowers — Resin Process</h2><p>Surface experimentation and resin integration during the build process.</p></div></div>
+<div class="process-card"><img src="cascading flowers portrait.jpg" alt="Cascading Flowers studio portrait"><div class="card-info"><h2>Cascading Flowers — Studio Portrait</h2><p>In-studio documentation showing scale, surface movement, and final atmosphere.</p></div></div>
+<div class="process-card"><img src="dancing spots rough.jpg" alt="Dancing Spots rough carving"><div class="card-info"><h2>Dancing Spots — Rough Carving</h2><p>Early carving stage showing structure and directional movement before finishing.</p></div></div>
+<div class="process-card"><img src="franklin rough.jpg" alt="Franklin rough carving"><div class="card-info"><h2>Franklin — Rough Stage</h2><p>Large octopus carving during foundational shaping and form development.</p></div></div>
+<div class="process-card"><img src="franklin rough 2.jpg" alt="Franklin rough carving detail"><div class="card-info"><h2>Franklin — Surface Development</h2><p>Secondary rough-stage documentation showing evolving texture and carving direction.</p></div></div>
+<div class="process-card"><img src="franklin portrait.jpg" alt="Franklin portrait"><div class="card-info"><h2>Franklin — Studio Portrait</h2><p>Environmental studio portrait documenting scale and workshop atmosphere.</p></div></div>
+<div class="process-card"><img src="mountain lion rough.jpg" alt="Mountain lion rough carving"><div class="card-info"><h2>Mountain Lion — Rough Form</h2><p>Exploratory carving stage focused on gesture and silhouette.</p></div></div>
+<div class="process-card"><img src="mountain lion rough sketch.jpg" alt="Mountain lion rough sketch"><div class="card-info"><h2>Mountain Lion — Sketch Study</h2><p>Preliminary sketch and shape study supporting the carving process.</p></div></div>
 </section>
 <div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""></div>
 <footer>The Salty Vault Studio</footer>
