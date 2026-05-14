@@ -1,1 +1,77 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Archive | The Salty Vault Studio</title><style>body{margin:0;font-family:Georgia,serif;background:#161616;color:#f5f1e8}nav{background:#111;padding:20px;text-align:center}nav a{color:#d8c7ae;text-decoration:none;margin:0 15px;font-size:.95rem}nav a:hover{color:#d6a35d}header{padding:80px 20px 50px;text-align:center;background:linear-gradient(to bottom,#111,#2f2a24)}h1{font-size:4rem;margin-bottom:10px}.subtitle{max-width:820px;margin:auto;color:#d8c7ae;line-height:1.8}.gallery{max-width:1500px;margin:60px auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}.piece{background:#222;border-radius:16px;overflow:hidden;border:1px solid #333}.primary-image{width:100%;height:300px;object-fit:contain;background:#111;display:block}.thumbnail-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:4px;background:#111}.thumbnail-strip img{width:100%;height:60px;object-fit:cover}.piece-info{padding:18px;text-align:center}.piece-info h2{margin:0;font-size:1.35rem;font-weight:normal;color:#f5f1e8}footer{margin-top:80px;padding:40px;text-align:center;background:#111;color:#777}@media(max-width:900px){h1{font-size:2.7rem}.gallery{grid-template-columns:1fr}.primary-image{height:240px}.thumbnail-strip img{height:50px}}</style></head><body><nav><a href="index.html">Home</a><a href="sculpture.html">Current Sculpture</a><a href="paintings.html">Available Paintings</a><a href="archive.html">Archive</a><a href="process.html">Process</a><a href="about.html">About</a></nav><header><h1>Studio Archive</h1><p class="subtitle">Archived collection from The Salty Vault Studio.</p></header><section class="gallery"><div class="piece"><img class="primary-image" src="images/cascading petals.JPG"><div class="thumbnail-strip"><img src="cascading petals close.jpg"><img src="cascading petals close 2.jpg"><img src="cascading petals close 3.JPG"><img src="cascading petals close 4.JPG"></div><div class="piece-info"><h2>Cascading Flowers</h2></div></div><div class="piece"><img class="primary-image" src="images/el dorado.jpg"><div class="thumbnail-strip"><img src="el dorado 2.jpg"></div><div class="piece-info"><h2>El Dorado</h2></div></div><div class="piece"><img class="primary-image" src="images/flying snacks.jpg"><div class="thumbnail-strip"><img src="flying snacks 2.jpg"></div><div class="piece-info"><h2>Flying Snacks</h2></div></div></section><footer>The Salty Vault Studio</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Archive | The Salty Vault Studio</title>
+<style>
+body { margin: 0; font-family: Georgia, serif; background: #161616; color: #f5f1e8; }
+nav { background: #111; padding: 20px; text-align: center; }
+nav a { color: #d8c7ae; text-decoration: none; margin: 0 15px; font-size: 0.95rem; }
+nav a:hover { color: #d6a35d; }
+header { padding: 80px 20px 50px; text-align: center; background: linear-gradient(to bottom, #111, #2f2a24); }
+h1 { font-size: 4rem; margin-bottom: 10px; }
+.subtitle { max-width: 820px; margin: auto; color: #d8c7ae; line-height: 1.8; }
+.gallery { max-width: 1500px; margin: 60px auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; align-items: start; }
+.piece { background: #222; border-radius: 16px; overflow: hidden; border: 1px solid #333; }
+.primary-image { width: 100%; height: 300px; object-fit: contain; display: block; background: #111; cursor: pointer; transition: transform 0.25s ease; }
+.thumbnail-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 4px; background: #111; }
+.thumbnail-strip img { width: 100%; height: 60px; object-fit: cover; display: block; background: #111; cursor: pointer; opacity: 0.85; transition: opacity 0.25s ease, transform 0.25s ease; }
+.primary-image:hover, .thumbnail-strip img:hover { transform: scale(1.02); opacity: 1; }
+.piece-info { padding: 20px; }
+.piece-info h2 { margin: 0 0 8px; font-size: 1.45rem; }
+.status { color: #d6a35d; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 10px; }
+.description { color: #d8c7ae; line-height: 1.55; font-size: 0.92rem; }
+.lightbox { display: none; position: fixed; z-index: 9999; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100vh; overflow: auto; background: rgba(0,0,0,0.92); }
+.lightbox img { display: block; margin: auto; max-width: 92%; max-height: 88vh; border-radius: 12px; }
+.lightbox-close { position: absolute; top: 18px; right: 34px; color: #fff; font-size: 42px; font-weight: bold; cursor: pointer; }
+.lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); border: 1px solid #555; background: rgba(17,17,17,0.75); color: #f5f1e8; font-size: 42px; width: 56px; height: 72px; cursor: pointer; border-radius: 10px; }
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-prev:hover, .lightbox-next:hover { color: #d6a35d; border-color: #d6a35d; }
+footer { margin-top: 80px; padding: 40px; text-align: center; background: #111; color: #777; }
+@media (max-width: 900px) { nav a { display: inline-block; margin: 6px 10px; } h1 { font-size: 2.7rem; } .gallery { grid-template-columns: 1fr; } .primary-image { height: 240px; } .thumbnail-strip img { height: 50px; } .lightbox-prev, .lightbox-next { width: 44px; height: 58px; font-size: 32px; } .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; } }
+</style>
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="sculpture.html">Current Sculpture</a><a href="paintings.html">Available Paintings</a><a href="archive.html">Archive</a><a href="process.html">Process</a><a href="about.html">About</a></nav>
+<header><h1>Studio Archive</h1><p class="subtitle">Archived collection of earlier carvings, paintings, refinishes, experiments, and evolving studio work.</p></header>
+<section class="gallery">
+<div class="piece"><img class="primary-image" src="images/cascading petals.JPG" alt="Cascading Flowers sculpture primary image"><div class="thumbnail-strip"><img src="cascading petals close.jpg" alt="Cascading Flowers close-up image"><img src="cascading petals close 2.jpg" alt="Cascading Flowers close-up image"><img src="cascading petals close 3.JPG" alt="Cascading Flowers close-up image"><img src="cascading petals close 4.JPG" alt="Cascading Flowers close-up image"></div><div class="piece-info"><div class="status">Archived Work</div><h2>Cascading Flowers</h2><div class="description">Cedar carving with resin floral detail.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/life of rome county.jpg" alt="Life of Rome County"><div class="piece-info"><div class="status">Private Collection</div><h2>Life of Rome County</h2><div class="description">Bee carving in Eastern Red Cedar.</div></div></div>
+<div class="piece"><img class="primary-image" src="feather1.jpg" alt="Feather carving primary image"><div class="thumbnail-strip"><img src="feather2.jpg" alt="Feather carving detail image"></div><div class="piece-info"><div class="status">Archived Work</div><h2>Feather Series</h2><div class="description">Eastern Red Cedar feather carving.</div></div></div>
+<div class="piece"><img class="primary-image" src="goose refinish.JPG" alt="Goose Refinish primary image"><div class="thumbnail-strip"><img src="goose refinish2.JPG" alt="Goose Refinish detail image"><img src="goose refinish3.JPG" alt="Goose Refinish detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Goose Refinish</h2><div class="description">Refinish and restoration work.</div></div></div>
+<div class="piece"><img class="primary-image" src="hope and joy.jpg" alt="Hope and Joy carving primary image"><div class="thumbnail-strip"><img src="hope and joy2.jpg" alt="Hope and Joy detail image"><img src="hope and joy3.jpg" alt="Hope and Joy detail image"><img src="hope and joy4.JPG" alt="Hope and Joy detail image"><img src="hope and joy5.JPG" alt="Hope and Joy detail image"><img src="hope and joy6.jpg" alt="Hope and Joy detail image"><img src="hope and joy7.jpg" alt="Hope and Joy detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Hope and Joy</h2><div class="description">Eastern Red Cedar carving.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/large mouth bass.jpg" alt="Large Mouth Bass carving primary image"><div class="thumbnail-strip"><img src="images/large mouth bass 2.jpg" alt="Large Mouth Bass detail image"><img src="images/large mouth bass 3.jpg" alt="Large Mouth Bass detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Large Mouth Bass</h2><div class="description">Eastern Red Cedar fish carving.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/manatee.jpg" alt="Manatee carving primary image"><div class="thumbnail-strip"><img src="images/manatee2.jpg" alt="Manatee detail image"><img src="images/manatee3.jpg" alt="Manatee detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Manatee Series</h2><div class="description">Eastern Red Cedar and resin.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/swirling seas.JPG" alt="Swirling Seas carving primary image"><div class="thumbnail-strip"><img src="images/swirling seas2.JPG" alt="Swirling Seas detail image"><img src="images/swirling seas3.JPG" alt="Swirling Seas detail image"><img src="images/swirling seas4.JPG" alt="Swirling Seas detail image"><img src="images/swirling seas5.JPG" alt="Swirling Seas detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Swirling Seas</h2><div class="description">Eastern Red Cedar turtle carving.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/rucker 82nd airborne4.jpg" alt="Rucker 82nd Airborne carving primary image"><div class="thumbnail-strip"><img src="images/rucker 82nd airborne2.jpg" alt="Rucker 82nd Airborne detail image"><img src="images/rucker 82nd airborne3.jpg" alt="Rucker 82nd Airborne detail image"><img src="images/rucker 82nd airborne5.jpg" alt="Rucker 82nd Airborne detail image"><img src="images/rucker 82nd airborne6.jpg" alt="Rucker 82nd Airborne detail image"><img src="images/rucker 82nd airborne7.jpg" alt="Rucker 82nd Airborne detail image"></div><div class="piece-info"><div class="status">Private Collection</div><h2>Rucker 82nd Airborne</h2><div class="description">Commemorative walking stick.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/sister octopus cane.jpg" alt="Sister Octopus Cane"><div class="piece-info"><div class="status">Conceptual Work</div><h2>Sister Octopus Cane</h2><div class="description">Eastern Red Cedar octopus cane concept.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/savannah.jpg" alt="Savannah carving"><div class="piece-info"><div class="status">Archived Work</div><h2>Savannah</h2><div class="description">Scroll saw cut pine, hand painted.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/NSB pelicans.jpg" alt="NSB Pelicans carving"><div class="piece-info"><div class="status">Private Collection</div><h2>NSB Pelicans</h2><div class="description">Archived carved wildlife work.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/monstera bookmark.jpg" alt="Monstera Bookmark"><div class="piece-info"><div class="status">Private Collection</div><h2>Monstera Bookmark</h2><div class="description">Small carved archive work.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/la vida hermosa.jpg" alt="La Vida Hermosa painting"><div class="piece-info"><div class="status">Private Collection</div><h2>La Vida Hermosa</h2><div class="description">Acrylic painting.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/mangrove sunrise.jpg" alt="Mangrove Sunrise painting"><div class="piece-info"><div class="status">Private Collection</div><h2>Mangrove Sunrise</h2><div class="description">Acrylic painting.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/el dorado.jpg" alt="El Dorado painting primary image"><div class="thumbnail-strip"><img src="el dorado 2.jpg" alt="El Dorado companion image"></div><div class="piece-info"><div class="status">Archived Painting</div><h2>El Dorado</h2><div class="description">Acrylic on canvas.</div></div></div>
+<div class="piece"><img class="primary-image" src="images/flying snacks.jpg" alt="Flying Snacks painting primary image"><div class="thumbnail-strip"><img src="flying snacks 2.jpg" alt="Flying Snacks companion image"></div><div class="piece-info"><div class="status">Archived Painting</div><h2>Flying Snacks</h2><div class="description">Acrylic on canvas.</div></div></div>
+</section>
+<div id="lightbox" class="lightbox"><span class="lightbox-close">&times;</span><button class="lightbox-prev" aria-label="Previous image">&#8249;</button><img id="lightbox-img" src="" alt=""><button class="lightbox-next" aria-label="Next image">&#8250;</button></div>
+<footer>The Salty Vault Studio</footer>
+<script>
+const galleryImages = Array.from(document.querySelectorAll('.piece img'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeButton = document.querySelector('.lightbox-close');
+const prevButton = document.querySelector('.lightbox-prev');
+const nextButton = document.querySelector('.lightbox-next');
+let currentIndex = 0;
+function showImage(index) { currentIndex = (index + galleryImages.length) % galleryImages.length; lightboxImg.src = galleryImages[currentIndex].src; lightboxImg.alt = galleryImages[currentIndex].alt || ''; }
+galleryImages.forEach(function(image, index) { image.addEventListener('click', function() { lightbox.style.display = 'block'; showImage(index); }); });
+prevButton.addEventListener('click', function(event) { event.stopPropagation(); showImage(currentIndex - 1); });
+nextButton.addEventListener('click', function(event) { event.stopPropagation(); showImage(currentIndex + 1); });
+closeButton.addEventListener('click', function() { lightbox.style.display = 'none'; lightboxImg.src = ''; });
+lightbox.addEventListener('click', function(event) { if (event.target === lightbox) { lightbox.style.display = 'none'; lightboxImg.src = ''; } });
+document.addEventListener('keydown', function(event) { if (event.key === 'Escape') { lightbox.style.display = 'none'; } if (lightbox.style.display === 'block' && event.key === 'ArrowLeft') { showImage(currentIndex - 1); } if (lightbox.style.display === 'block' && event.key === 'ArrowRight') { showImage(currentIndex + 1); } });
+</script>
+</body>
+</html>
