@@ -3,33 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Black Water Vault | Florida Wetlands & Development Maps</title>
-  <meta name="description" content="The Black Water Vault is a Florida wetlands, development, and hydrologic pressure map archive built from reproducible GIS workflows." />
+  <title>The Blackwater Vault | Florida Wetlands & Development Maps</title>
+  <meta name="description" content="The Blackwater Vault is a Florida wetlands, development, and hydrologic pressure map archive built from reproducible GIS workflows." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top">The Black Water Vault</a>
+      <a class="brand" href="index.html">The Blackwater Vault</a>
       <div class="nav-links">
-        <a href="#maps">Maps</a>
-        <a href="#method">Method</a>
-        <a href="#districts">Districts</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#maps">Maps</a>
+        <a href="method.html">Method</a>
+        <a href="evidence.html">Evidence</a>
+        <a href="index.html#contact">Contact</a>
       </div>
     </nav>
 
     <section id="top" class="hero">
       <p class="eyebrow">Florida GIS • Wetlands • Development Pressure • Hydrologic Context</p>
-      <h1>Maps for seeing Florida’s wetland systems before they are treated like empty land.</h1>
+      <h1>A public archive for Florida wetland maps, development pressure, and regional hydrologic context.</h1>
       <p class="hero-copy">
-        The Black Water Vault is a public-facing archive for regional Florida maps showing wetlands,
-        development, waterbodies, protected lands, and flow-accumulation patterns. The goal is not hype.
-        The goal is visual evidence, reproducible workflow, and plain-language interpretation.
+        The Blackwater Vault is a map containment area: one public place for final map exports,
+        supporting methodology, workflow notes, evidence documents, and plain-language interpretation.
+        It starts with one strong map and grows by region.
       </p>
       <div class="cta-row">
-        <a class="button" href="#maps">View map archive</a>
-        <a class="button secondary" href="#method">Read the method</a>
+        <a class="button" href="#maps">Open the map archive</a>
+        <a class="button secondary" href="method.html">Read the method</a>
       </div>
     </section>
   </header>
@@ -39,96 +39,84 @@
       <div>
         <h2>What this is</h2>
         <p>
-          A map archive built to explain how development pressure interacts with wetlands and likely surface-flow
-          behavior across Florida. The maps are regional first: Water Management Districts are treated as the main
-          hydrologic frame, with smaller Areas of Interest used later for closer inspection.
+          A public-facing GIS archive built to show how Florida development pressure interacts with wetlands,
+          waterbodies, protected lands, and likely surface-flow behavior. The maps are regional first, using
+          Water Management Districts as the main frame.
         </p>
       </div>
       <div>
         <h2>What this is not</h2>
         <p>
-          These maps are not engineering flood models, legal wetland delineations, or parcel-level hydraulic studies.
-          They show visible spatial relationships and hydrologic pressure patterns that can guide deeper review.
+          This is not a legal wetland delineation, engineering flood model, permit decision, or parcel-level hydraulic study.
+          It is a reproducible map system for seeing spatial relationships and identifying places that deserve closer review.
         </p>
       </div>
     </section>
 
     <section id="maps" class="section">
       <div class="section-heading">
-        <p class="eyebrow">Map archive</p>
-        <h2>Current map collections</h2>
+        <p class="eyebrow">Map containment area</p>
+        <h2>Current public map structure</h2>
+        <p class="section-copy">This is intentionally small at launch. One map is enough if the method is clean and the limits are honest.</p>
       </div>
       <div class="card-grid">
         <article class="card featured">
-          <p class="status">In production</p>
-          <h3>St. Johns River Water Management District</h3>
+          <p class="status">Primary map slot</p>
+          <h3>SJRWMD Regional Hydrologic Map</h3>
           <p>
-            Regional development, wetlands, waterbodies, roads, and flow-accumulation stream hierarchy.
-            Intended as the first locked regional hydrologic truth map.
+            Holding area for the St. Johns River Water Management District regional map: development,
+            wetlands, waterbodies, roads, protected lands, and flow-accumulation stream hierarchy.
           </p>
-          <a href="#contact" aria-label="Request St. Johns River Water Management District map access">Request current export</a>
+          <p class="small">Status: map export pending upload.</p>
         </article>
         <article class="card">
-          <p class="status">Next district</p>
-          <h3>South Florida Water Management District</h3>
-          <p>
-            Priority region for Big Cypress, Everglades, Dade-Collier / Jetport context, Camp Osceola adjacency,
-            and development pressure around major wetland systems.
-          </p>
-        </article>
-        <article class="card">
-          <p class="status">Statewide assembly</p>
+          <p class="status">Reference map slot</p>
           <h3>Florida Development + Wetlands</h3>
           <p>
-            Statewide reference layers for NLCD development classes, NWI wetlands, FLMA protected lands,
-            waterbodies, and supporting ecological context.
+            Holding area for the statewide development/wetlands reference map and future statewide snapshots.
           </p>
+          <p class="small">Status: public export pending upload.</p>
+        </article>
+        <article class="card">
+          <p class="status">Next region</p>
+          <h3>SFWMD / Big Cypress / Everglades</h3>
+          <p>
+            Future containment area for South Florida regional context, including Big Cypress, Everglades,
+            Dade-Collier / Jetport context, and Camp Osceola adjacency.
+          </p>
+          <p class="small">Status: queued.</p>
         </article>
       </div>
     </section>
 
-    <section id="method" class="section method">
+    <section class="section vault-layout">
       <div class="section-heading">
-        <p class="eyebrow">Method</p>
-        <h2>Built as a reproducible GIS system, not a one-off graphic.</h2>
+        <p class="eyebrow">Archive logic</p>
+        <h2>How the Vault is organized</h2>
       </div>
       <div class="method-list">
         <div>
-          <h3>1. Preserve originals</h3>
-          <p>Source datasets are archived intact. Processing happens only on duplicated working copies.</p>
+          <h3>Maps</h3>
+          <p>Final public exports, screenshots, regional PDFs, and future web map links.</p>
         </div>
         <div>
-          <h3>2. Work by region</h3>
-          <p>Water Management Districts provide the regional frame so the analysis follows hydrologic governance instead of arbitrary political boundaries.</p>
+          <h3>Method</h3>
+          <p>Workflow summaries, QA rules, regional hydrologic framework, and data-lineage notes.</p>
         </div>
         <div>
-          <h3>3. Separate analysis from display</h3>
-          <p>Flow-accumulation and stream rasters remain analytical layers. Water masks are used only to clean visual artifacts inside lakes and flat water surfaces.</p>
+          <h3>Evidence</h3>
+          <p>Public notices, permit references, source notes, and contextual records used to explain why a map matters.</p>
         </div>
         <div>
-          <h3>4. Document limitations</h3>
-          <p>Regional maps show flow preference and hydrologic pressure. They do not claim exact flood depths or culvert-by-culvert hydraulic behavior.</p>
+          <h3>Limitations</h3>
+          <p>Clear boundaries between visual evidence, hydrologic pressure, field verification, and formal engineering/legal findings.</p>
         </div>
       </div>
-    </section>
-
-    <section id="districts" class="section districts">
-      <div class="section-heading">
-        <p class="eyebrow">Florida regional buildout</p>
-        <h2>Water Management District structure</h2>
-      </div>
-      <ul class="district-list">
-        <li><span>SJRWMD</span><strong>First regional map build</strong></li>
-        <li><span>SFWMD</span><strong>Everglades / Big Cypress priority</strong></li>
-        <li><span>SWFWMD</span><strong>Karst, springs, coastal pressure</strong></li>
-        <li><span>SRWMD</span><strong>North Florida rivers and rural change</strong></li>
-        <li><span>NWFWMD</span><strong>Panhandle wetlands and coastal systems</strong></li>
-      </ul>
     </section>
 
     <section class="section quote-block">
       <blockquote>
-        “The regional model establishes hydrologic pressure. Local Areas of Interest resolve engineered mediation without altering the underlying system.”
+        “Regional maps discover patterns. Local Areas of Interest test claims.”
       </blockquote>
     </section>
 
@@ -137,15 +125,15 @@
         <p class="eyebrow">Contact</p>
         <h2>Map requests, collaborations, and local review</h2>
         <p>
-          Use this page as the public archive hub. Add final PDFs, screenshots, district pages, and source notes as each map package is completed.
+          This archive is built to support public education, local review, and responsible environmental communication.
         </p>
       </div>
-      <a class="button" href="mailto:thesaltyvaultstudio@gmail.com?subject=The%20Black%20Water%20Vault%20Map%20Request">Email map request</a>
+      <a class="button" href="mailto:thesaltyvaultstudio@gmail.com?subject=The%20Blackwater%20Vault%20Map%20Request">Email map request</a>
     </section>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> The Black Water Vault. Florida wetlands and development-pressure map archive.</p>
+    <p>© <span id="year"></span> The Blackwater Vault. Florida wetlands and development-pressure map archive.</p>
     <p class="small">Maps are interpretive GIS products. They are not formal wetland delineations, permits, engineering models, or legal determinations.</p>
   </footer>
 
